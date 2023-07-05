@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- the mapper namespace specifies the path of mapper file, which is StudentMapper -->
+<mapper namespace="com.example.demo.student.mapper.StudentMapper">
+<!-- Either select or insert (based on the service file) the resultType is the path of the main file you are trying to connect, which is Student-->
+
+    <select id="select" resultType="com.example.demo.student.entity.Student">
+        select * from student
+    </select>
+
+    <insert id="insertStudent" >
+        insert into student(name,age,email) values (#{name}, #{age}, #{email})
+    </insert>
+    <update id="updateById">
+        update student set name = #{student.name}, age = #{student.age}, email= #{student.email} where id = #{id}
+    </update>
+    <delete id="deleteById">
+        delete from student where id= #{id}
+    </delete>
+    <!--  These are all get method-->
+
+
+</mapper>
